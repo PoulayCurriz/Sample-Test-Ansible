@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  collections:
+    - kubernetes.core
+  tasks:
+  - name: Create a pod
+    k8s:
+      state: present
+      definition:
+        apiVersion: v1
+        kind: Pod
+        metadata:
+          name: "ansible-pod-test"
+          namespace: default
+          labels:
+            app: ansible-pod-test
+        spec:
+          containers:
+          - name: ansible-pod-test
+            image: busybox
