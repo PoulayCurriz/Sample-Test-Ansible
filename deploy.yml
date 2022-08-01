@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: {{host_vars}}
   collections:
     - kubernetes.core
   tasks:
