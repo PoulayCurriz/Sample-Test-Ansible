@@ -1,1 +1,3 @@
-kubernetes.core
+---
+collections:
+- name: kubernetes.core
