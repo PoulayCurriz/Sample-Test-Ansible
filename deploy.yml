@@ -8,7 +8,7 @@
       state: present
       definition:
         apiVersion: v1
-        kind: Deployement
+        kind: Deployment
         metadata:
           name: "sample-app"
           namespace: default
