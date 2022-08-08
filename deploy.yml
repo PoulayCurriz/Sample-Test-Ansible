@@ -3,18 +3,19 @@
   collections:
     - kubernetes.core
   tasks:
-  - name: Create a pod
+  - name: Deploy NodeJS-App
     k8s:
       state: present
       definition:
         apiVersion: v1
-        kind: Pod
+        kind: Deployement
         metadata:
-          name: "ansible-pod-test"
+          name: "sample-app"
           namespace: default
           labels:
-            app: ansible-pod-test
+            app: sample-app
         spec:
           containers:
-          - name: ansible-pod-test
-            image: busybox
+          - name: sample-app-nodejs
+            image: menhkte.jfrog.io/default-docker/nodejs-sample-app:latest
+            imagePullPolicy: IfNotPresent
