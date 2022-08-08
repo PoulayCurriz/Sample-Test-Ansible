@@ -1,2 +1,2 @@
 [KUBERNETEST]
-localhost ansible_port=2222
+host.docker.internal ansible_port=2222
