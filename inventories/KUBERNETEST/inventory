@@ -1,2 +1,2 @@
 [KUBERNETEST]
-localhost
+localhost ansible_port=2222
