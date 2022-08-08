@@ -32,3 +32,5 @@
                   imagePullPolicy: IfNotPresent
                   ports:
                     - containerPort: 8080
+                imagePullSecrets:
+                - name: artifactory-credentials
