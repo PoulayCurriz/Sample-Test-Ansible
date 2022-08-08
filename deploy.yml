@@ -30,7 +30,7 @@
                 - name: sample-app-nodejs
                   image: menhkte.jfrog.io/default-docker/nodejs-sample-app:latest
                   imagePullPolicy: IfNotPresent
+                  imagePullSecrets:
+                    - name: artifactory-credentials
                   ports:
                     - containerPort: 8080
-                imagePullSecrets:
-                - name: artifactory-credentials
