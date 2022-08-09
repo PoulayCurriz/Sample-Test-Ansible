@@ -1,0 +1,33 @@
+---
+- name: Deploy NodeJS-App
+    k8s:
+      apply: true
+      state: present
+      definition:
+        apiVersion: v1
+        kind: Deployment
+        metadata:
+          name: "sample-app-nodejs"
+          namespace: default
+          labels:
+            app: sample-app-nodejs
+        spec:
+          selector:
+            matchLabels:
+              app: sample-app-nodejs
+          replicas: 1
+          strategy:
+            type: RollingUpdate
+          template:
+            metadata:
+              labels:
+                app: sample-app-nodejs
+            spec:
+              containers:
+                - name: sample-app-nodejs
+                  image: menhkte.jfrog.io/default-docker/nodejs-sample-app:latest
+                  imagePullPolicy: IfNotPresent
+                  imagePullSecrets:
+                    - name: docker-credentials
+                  ports:
+                    - containerPort: 8080
