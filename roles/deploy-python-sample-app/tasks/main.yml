@@ -40,14 +40,14 @@
       apiVersion: v1
       kind: Service
       metadata:
-        name: sample-app-nodejs-svc
+        name: sample-app-python-svc
         namespace: sample-app
         labels:
-          app: sample-app-nodejs
+          app: sample-app-python
       spec:
         selector:
           app: sample-app-nodejs
         ports:
         - protocol: TCP
-          targetPort: 8080
-          port: 8080
+          targetPort: 5000
+          port: 5000
