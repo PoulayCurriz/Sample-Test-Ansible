@@ -31,3 +31,23 @@
                   - name: docker-credentials
                 ports:
                   - containerPort: 8080
+
+- name: Deploy NodeJS Service
+  kubernetes.core.k8s_service:
+    sate: present:
+    apply: true
+    definition:
+      apiVersion: v1
+      kind: Service
+      metadata:
+        name: sample-app-nodejs-svc
+        namespace: default
+        labels:
+          app: sample-app-nodejs
+      spec:
+        selector:
+          app: sample-app-nodejs
+        ports:
+        - protocol: TCP
+          targetPort: 8080
+          port: 8080
