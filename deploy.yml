@@ -2,3 +2,4 @@
 - hosts: {{host_vars}}
   roles:
     - role: deploy-nodejs-sample-app
+    - role: deploy-python-sample-app

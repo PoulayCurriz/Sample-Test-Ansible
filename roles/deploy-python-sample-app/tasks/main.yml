@@ -1,0 +1,33 @@
+---
+- name: Deploy Python-App
+  kubernetes.core.k8s:
+    apply: true
+    state: present
+    definition:
+      apiVersion: v1
+      kind: Deployment
+      metadata:
+        name: "sample-app-python"
+        namespace: default
+        labels:
+          app: sample-app-python
+      spec:
+        selector:
+          matchLabels:
+            app: sample-app-python
+        replicas: 1
+        strategy:
+          type: RollingUpdate
+        template:
+          metadata:
+            labels:
+              app: sample-app-python
+          spec:
+            containers:
+              - name: sample-app-python
+                image: menhkte.jfrog.io/default-docker/python-sample-app:latest
+                imagePullPolicy: IfNotPresent
+                imagePullSecrets:
+                  - name: docker-credentials
+                ports:
+                  - containerPort: 5000
