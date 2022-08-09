@@ -1,5 +1,6 @@
 ---
 - hosts: {{host_vars}}
   roles:
+    - role: create-namespace-sample-app
     - role: deploy-nodejs-sample-app
     - role: deploy-python-sample-app

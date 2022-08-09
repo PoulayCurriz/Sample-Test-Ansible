@@ -8,7 +8,7 @@
       kind: Deployment
       metadata:
         name: "sample-app-python"
-        namespace: default
+        namespace: sample-app
         labels:
           app: sample-app-python
       spec:

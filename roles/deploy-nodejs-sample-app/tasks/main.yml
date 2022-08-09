@@ -8,7 +8,7 @@
       kind: Deployment
       metadata:
         name: "sample-app-nodejs"
-        namespace: default
+        namespace: sample-app
         labels:
           app: sample-app-nodejs
       spec:
@@ -41,7 +41,7 @@
       kind: Service
       metadata:
         name: sample-app-nodejs-svc
-        namespace: default
+        namespace: sample-app
         labels:
           app: sample-app-nodejs
       spec:
