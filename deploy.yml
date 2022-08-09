@@ -5,6 +5,7 @@
   tasks:
   - name: Deploy NodeJS-App
     k8s:
+      apply: true
       state: present
       definition:
         apiVersion: v1
