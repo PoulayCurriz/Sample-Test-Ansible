@@ -1,0 +1,16 @@
+---
+- name: Undeploy Sample-App-Python
+  kubernetes.core.k8s:
+    state: absent
+    api_version: v1
+    kind: Deployment
+    name: sample-app-python
+    namespace: sample-app
+
+- name: Undeploy Sample-App-Python Service
+  kubernetes.core.k8s:
+    state: absent
+    api_version: v1
+    kind: Service
+    name: sample-app-python-svc
+    namespace: sample-app
