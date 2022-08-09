@@ -1,6 +1,4 @@
 ---
 - hosts: {{host_vars}}
-  collections:
-    - kubernetes.core
   roles:
     - role: deploy-nodejs-sample-app
