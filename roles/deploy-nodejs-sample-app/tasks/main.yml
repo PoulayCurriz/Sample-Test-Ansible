@@ -1,4 +1,7 @@
 ---
+collections:
+    - kubernetes.core
+
 - name: Deploy NodeJS-App
     k8s:
       apply: true
