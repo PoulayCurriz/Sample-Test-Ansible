@@ -34,7 +34,7 @@
 
 - name: Deploy NodeJS Service
   kubernetes.core.k8s_service:
-    sate: present:
+    state: present
     apply: true
     definition:
       apiVersion: v1
