@@ -33,7 +33,7 @@
                   - containerPort: 8080
 
 - name: Deploy NodeJS Service
-  kubernetes.core.k8s_service:
+  kubernetes.core.k8s:
     state: present
     apply: true
     definition:
