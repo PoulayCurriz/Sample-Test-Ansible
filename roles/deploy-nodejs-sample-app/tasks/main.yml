@@ -1,5 +1,5 @@
 ---
-- name: Deploy NodeJS-App
+- name: Deploy Sample-App-NodeJS
   kubernetes.core.k8s:
     apply: true
     state: present
@@ -32,7 +32,7 @@
                 ports:
                   - containerPort: 8080
 
-- name: Deploy NodeJS Service
+- name: Deploy Sample-App-NodeJS Service
   kubernetes.core.k8s:
     state: present
     apply: true
